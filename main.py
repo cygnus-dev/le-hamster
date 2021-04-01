@@ -1,7 +1,7 @@
 
 import discord
 from discord.ext import commands
-from commands import ping_cmd
+from commands import ping_cmd, auctiontest_cmd
 from events import ready
 
 ham = commands.Bot(command_prefix='#')
@@ -13,3 +13,7 @@ async def ping(ctx):
 @ham.event
 async def on_ready():
     ready.event()
+
+@ham.command()
+async def auction(ctx):
+    await auctiontest_cmd.run(ctx)
